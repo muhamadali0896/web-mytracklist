@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/web-mytracklist/static/css/main.1b6029a6.css",
+    "main.js": "/web-mytracklist/static/js/main.6ff85bd3.js",
+    "index.html": "/web-mytracklist/index.html",
+    "main.1b6029a6.css.map": "/web-mytracklist/static/css/main.1b6029a6.css.map",
+    "main.6ff85bd3.js.map": "/web-mytracklist/static/js/main.6ff85bd3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1b6029a6.css",
+    "static/js/main.6ff85bd3.js"
+  ]
+}
