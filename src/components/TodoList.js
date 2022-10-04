@@ -4,13 +4,13 @@ import Todo from './Todo';
 
 function TodoList() {
 
-  const hostname = 'Mytracklistapi-env.eba-zcyfamts.ap-south-1.elasticbeanstalk.com';
+  const hostname = 'http://Mytracklistapi-env.eba-zcyfamts.ap-south-1.elasticbeanstalk.com';
   
   const [todos, setTodos] = useState([]);
 
   const fetchTasksHandler = useCallback(async () => {
     try {
-      const response = await fetch('http://'+hostname+'/tasks/');
+      const response = await fetch(hostname+'/tasks/');
       if (!response.ok) {
         throw new Error('Something went wrong!');
       }
@@ -48,7 +48,7 @@ function TodoList() {
           isCompleted: false
     }
 
-    fetch('http://'+hostname+'/tasks/add', {
+    fetch(hostname+'/tasks/add', {
       method: 'POST',
       body: JSON.stringify(taskData),
       headers: {
@@ -66,7 +66,7 @@ function TodoList() {
     if (!newValue.taskName || /^\s*$/.test(newValue.taskName)) {
       return;
     }
-    fetch('http://'+hostname+'/tasks/update', {
+    fetch(hostname+'/tasks/update', {
       method: 'PUT',
       body: JSON.stringify(newValue),
       headers: {
@@ -78,7 +78,7 @@ function TodoList() {
   };
 
   const removeTodo = id => {
-    fetch(`http://`+hostname+`/tasks/delete/${id}`,{
+    fetch(hostname+`/tasks/delete/${id}`,{
             method: 'DELETE'
           });
     const removedArr = [...todos].filter(todo => todo.id !== id);
